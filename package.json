@@ -8,11 +8,13 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.6.0",
+    "firebase": "^8.2.9",
     "react": "^16.13.1",
     "react-bootstrap": "^1.5.1",
     "react-calendar": "^3.3.1",
     "react-dom": "^16.13.1",
     "react-material-ui-calendar": "^0.2.3",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {

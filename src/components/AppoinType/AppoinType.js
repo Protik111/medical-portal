@@ -2,6 +2,7 @@ import React from 'react';
 import '../AppoinType/AppoinType.css';
 import {Modal, Button} from 'react-bootstrap';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const AppoinType = (props) => {
     const { id, name, time, description } = props.item;
@@ -38,9 +39,9 @@ const AppoinType = (props) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Send
-                    </Button>
+                    <Link to = {`/appoinment`}>
+                        <Button variant="primary">Send</Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
         </div>
