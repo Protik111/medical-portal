@@ -1,0 +1,74 @@
+.list{
+    background-color: rgba(96, 195, 228, 0.904);
+    width : 120px;
+    height: 600px;
+    margin: 0;
+}
+.list-p{
+    margin-left: 25px;
+    /* margin-top: 30px; */
+    padding-top: 60px;
+}
+.list-p p{
+    padding: 7px;
+}
+.dashboard{
+    display: flex;
+    background-color: rgba(215, 243, 252, 0.904);
+}
+.calender h5{
+    margin-top: 19px;
+}
+.calender-style-2{
+    height: 400px;
+    margin-top: 25px;
+    padding: 10px;
+}
+.user-appointments{
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 1px 7px 1px gray;
+    margin-top: 35px;
+    margin-right: 100px;
+    border-radius: 3px;
+}
+.appoint-time{
+    display: flex;
+}
+.appoint-time h6{
+    margin-top: 20px;
+    color: rgba(96, 195, 228, 0.904);
+}
+.appoint-time p{
+    margin-left: 150px;
+    margin-top: 18px;
+}
+.names .schedule{
+    /* display: flex; */
+    margin-top: 20px;
+}
+.schedule p{
+    /* margin-left: 8px; */
+    color: gray;
+    font-size: 16px;
+}
+.names p{
+    margin-left: 25px;
+    color: gray;
+    font-size: 16px;
+}
+.schedule{
+    float: left;
+}
+.sc{
+    margin-right: 50px;
+}
+.time-sched{
+    display: flex;
+}
+.nm{
+    margin-right: 100px;
+}
+.nm ul{
+    font-weight: bold;
+}

@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import UserAppoinment from './components/UserAppointment/UserAppoinment';
+import Modals from './components/Modals/Modals';
 
 export const UserContext = createContext();
 
@@ -17,11 +18,17 @@ function App() {
 
   const [loggedInUser, setLoggedInUser] = useState({});
 
+  // const [value, onChange] = useState(new Date());
+
+
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
           <Route exact path="/">
+            <Appoinment></Appoinment>
+          </Route>
+          <Route path="/close">
             <Appoinment></Appoinment>
           </Route>
           <Route path="/home">
@@ -32,6 +39,9 @@ function App() {
           </Route>
           <PrivateRoute path="/appoinment">
             <UserAppoinment></UserAppoinment>
+          </PrivateRoute>
+          <PrivateRoute path="/modal">
+            <Modals></Modals>
           </PrivateRoute>
         </Switch>
       </Router>

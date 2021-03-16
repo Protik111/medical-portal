@@ -8,11 +8,14 @@ import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import data from '../../Data/data.json';
 import AppoinType from '../AppoinType/AppoinType';
+// import { useContext } from 'react';
+// import { UserContext } from '../../App';
 
 
 
 const Appoinment = () => {
-    const [value, onChange] = useState(new Date());
+    const [value, onChange] = useState(new Date()); 
+    // const [value, onChange] = useContext(UserContext);
     const [date, setDate] = useState([]);
     // const handleDate = () => {
     //     // setDate(new Date());

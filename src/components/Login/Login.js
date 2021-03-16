@@ -29,11 +29,25 @@ const Login = () => {
 
     const [passStatus, setPassStatus] = useState('');
     const [newUser, setNewUser] = useState(false);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser, input, setInput] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
 
     const { from } = location.state || { from: { pathname: "/" } };
+
+    const handleData = () => {
+        // console.log(loggedInUser);
+        const users = {...user};
+        fetch('http://localhost:5000/sendAppoinment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(users)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
 
     const handleGoogleSignIn = () => {
         const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -105,8 +119,10 @@ const Login = () => {
                     newUserInfo.success = true;
                     setLoggedInUser(newUserInfo);
                     setUser(newUserInfo);
+                    storeToken();
                     history.replace(from);
                     // console.log(res);
+                    // handleData();
                     
                 })
                 .catch((error) => {
@@ -117,6 +133,15 @@ const Login = () => {
                 });
             }
             e.preventDefault();
+        }
+
+        const storeToken = () => {
+            firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+            .then(function(idToken) {
+                sessionStorage.setItem('token', idToken);
+              }).catch(function(error) {
+                // Handle error
+              });
         }
 
         const updateUserProfile = (name) => {
@@ -192,6 +217,8 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+
+                    {/* <p>name: {input.name}</p> */}
 
             <div className="col-md-6 photo">
                 <img src={photo} alt=""/>
